@@ -38,7 +38,8 @@ def update_currency():
         # open google search web page
         google_url = "https://www.google.com/search?q=usd+to+egp"
         driver.get(google_url)
-        time.sleep(1)
+        # wait untill page is fully loaded
+        while driver.execute_script("return document.readyState") != 'complete': pass
         # parse HTML to find the new currency value
         soup = BeautifulSoup(driver.page_source,'lxml')
         result_div = soup.find('div',attrs={'class' : 'dDoNo'})
