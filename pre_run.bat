@@ -9,6 +9,7 @@ pip install bs4
 pip install datetime
 pip install random
 pip install playsound==1.2.2 
+pip install lxml
 GOTO :RUN_APP
 
 :RUN_APP
